@@ -320,11 +320,6 @@ preprocessing:
 - Frontal face assumption
 - Real-time performance requires GPU or Apple Silicon
 
-### Ethical Considerations
-- Emotion categories are culturally specific
-- System should not be used for high-stakes decisions
-- Privacy considerations for facial data processing
-
 ## Future Development
 
 ### Planned Enhancements
@@ -340,20 +335,6 @@ preprocessing:
 - Domain adaptation for real-world deployment
 - Uncertainty quantification
 
-## Citations
-
-If using this work in research, please cite:
-
-```bibtex
-@misc{emotion_detection_2024,
-  title={Advanced Emotion Detection System},
-  author={[Author Name]},
-  year={2024},
-  publisher={GitHub},
-  url={https://github.com/[username]/emotion_detection_project}
-}
-```
-
 ## Licence
 
 This project is released under the MIT Licence. The FER2013 dataset is subject to its own licence terms and should be obtained directly from the official source.
@@ -366,4 +347,3 @@ This project is released under the MIT Licence. The FER2013 dataset is subject t
 
 ---
 
-For technical enquiries or contributions, please open an issue on the project repository.
