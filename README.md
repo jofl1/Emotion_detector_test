@@ -1,10 +1,10 @@
-# Advanced Emotion Detection System
+# Emotion Detection System
 
 A deep learning-based facial emotion recognition system implementing state-of-the-art convolutional neural network architectures optimised for the FER2013 dataset. The system provides real-time emotion detection capabilities with multiple deployment options and comprehensive performance optimisation strategies.
 
 ## Overview
 
-This project implements a robust emotion detection pipeline using custom CNN architectures specifically designed for 48x48 greyscale facial images. The system achieves competitive performance on the challenging FER2013 dataset whilst maintaining computational efficiency suitable for real-time applications.
+This project implements an emotion detection pipeline using custom CNN architectures specifically designed for 48x48 greyscale facial images. The system achieves competitive performance on the challenging FER2013 dataset whilst maintaining computational efficiency suitable for real-time applications.
 
 ### Technical Specifications
 
