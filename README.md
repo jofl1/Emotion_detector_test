@@ -106,7 +106,5 @@ Expected accuracy: 65-70% on FER2013 test set
 - Close other applications
 - Reduce camera resolution in `emotion_detector.py`
 
-## License
 
-MIT License - feel free to use for your projects!
 
