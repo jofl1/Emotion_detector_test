@@ -1,0 +1,44 @@
+# Professional Emotion Detection Requirements
+# Core ML/DL frameworks
+tensorflow>=2.16.0
+tensorflow-metal>=1.0.0  # For Mac M-series optimization
+tensorflow-model-optimization>=0.7.0
+
+# Computer Vision and Image Processing
+opencv-python>=4.8.0
+pillow>=10.0.0
+albumentations>=1.3.0  # Advanced augmentation
+
+# High-Performance Inference
+onnx>=1.15.0
+onnxruntime>=1.16.0
+coremltools>=7.0  # Mac optimization
+
+# Scientific Computing
+numpy>=1.24.0
+scipy>=1.11.0
+scikit-learn>=1.3.0
+
+# Visualization and Analysis
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.16.0
+
+# Configuration and Utilities
+pyyaml>=6.0
+tqdm>=4.66.0
+psutil>=5.9.0
+
+# Model Conversion and Optimization
+tf2onnx>=1.15.0
+
+# Experiment Tracking (Optional)
+wandb>=0.15.0
+
+# Development and Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+memory-profiler>=0.61.0
+
+# Data Processing
+pandas>=2.1.0

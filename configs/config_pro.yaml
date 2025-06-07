@@ -1,0 +1,198 @@
+# Professional Emotion Detection Configuration
+
+# System Settings
+system:
+  name: "Emotion Detection Pro"
+  version: "2.0"
+  log_level: INFO
+  use_gpu: true
+  mixed_precision: true
+
+# Model Configuration
+model:
+  architecture: "efficientnet_v2"
+  input_shape: [48, 48, 1]
+  num_classes: 7
+  dropout_rate: 0.3
+  l2_regularization: 0.0001
+  
+  # Model paths
+  keras_path: "models/emotion_model_advanced_final.keras"
+  tflite_path: "exports/emotion_model_optimized.tflite"
+  onnx_path: "exports/emotion_model_optimized.onnx"
+  coreml_path: "exports/emotion_model_optimized.mlmodel"
+
+# Training Configuration
+training:
+  # Data paths
+  dataset_path: "~/Python/archive"
+  train_dir: "~/Python/archive/train"
+  test_dir: "~/Python/archive/test"
+  
+  # Hyperparameters
+  batch_size: 64
+  epochs: 100
+  initial_learning_rate: 0.001
+  min_learning_rate: 0.000001
+  warmup_epochs: 5
+  
+  # Regularization
+  label_smoothing: 0.1
+  gradient_clip_norm: 1.0
+  ema_decay: 0.999
+  
+  # Augmentation
+  augmentation_strength: 0.8
+  mixup_alpha: 0.2
+  cutmix_alpha: 1.0
+  
+  # Advanced techniques
+  use_attention: true
+  use_ema: true
+  use_mixup: true
+  use_cutmix: true
+
+# Inference Configuration
+inference:
+  backend: "auto"  # auto, tflite, onnx, coreml, tensorflow
+  batch_size: 1
+  num_threads: 4
+  use_optimization: true
+  cache_size: 128
+  
+  # Performance settings
+  enable_batching: false
+  max_batch_size: 8
+  batch_timeout_ms: 50
+  
+  # Optimization flags
+  use_tensorrt: false  # NVIDIA TensorRT
+  use_openvino: false  # Intel OpenVINO
+  use_nnapi: false     # Android NNAPI
+
+# Camera Configuration
+camera:
+  device_id: 0
+  resolution:
+    width: 1280
+    height: 720
+  fps: 30
+  buffer_size: 2
+  
+  # Capture settings
+  auto_exposure: true
+  auto_white_balance: true
+  brightness: 0
+  contrast: 0
+  saturation: 0
+
+# Face Detection Configuration
+face_detection:
+  method: "haarcascade"  # haarcascade, dnn, mtcnn
+  scale_factor: 1.1
+  min_neighbors: 5
+  min_size: [48, 48]
+  max_size: [300, 300]
+  
+  # DNN face detector settings (if using)
+  dnn_confidence_threshold: 0.5
+  dnn_model_path: "models/face_detector.caffemodel"
+  dnn_config_path: "models/face_detector.prototxt"
+
+# Emotion Labels and Colors
+emotions:
+  - id: 0
+    name: "Angry"
+    color: [0, 0, 255]      # BGR: Red
+  - id: 1
+    name: "Disgust"
+    color: [128, 0, 128]    # BGR: Purple
+  - id: 2
+    name: "Fear"
+    color: [255, 128, 0]    # BGR: Orange
+  - id: 3
+    name: "Happy"
+    color: [0, 255, 255]    # BGR: Yellow
+  - id: 4
+    name: "Neutral"
+    color: [128, 128, 128]  # BGR: Gray
+  - id: 5
+    name: "Sad"
+    color: [255, 0, 0]      # BGR: Blue
+  - id: 6
+    name: "Surprise"
+    color: [0, 255, 0]      # BGR: Green
+
+# Visualization Configuration
+visualization:
+  show_fps: true
+  show_confidence: true
+  show_probabilities: true
+  show_face_boxes: true
+  
+  # UI settings
+  font_scale: 0.8
+  font_thickness: 2
+  box_thickness: 2
+  
+  # Probability bars
+  bar_width: 200
+  bar_height: 20
+  bar_spacing: 5
+  
+  # Colors
+  text_color: [255, 255, 255]     # White
+  background_alpha: 0.7
+
+# Smoothing and Filtering
+smoothing:
+  enable_kalman: true
+  kalman_process_noise: 0.01
+  kalman_measurement_noise: 0.1
+  
+  # Moving average
+  enable_moving_average: true
+  window_size: 5
+  
+  # Confidence threshold
+  min_confidence: 0.3
+  confidence_smoothing: 0.8
+
+# Performance Monitoring
+monitoring:
+  enable_profiling: false
+  log_fps: true
+  log_latency: true
+  log_memory: false
+  
+  # Alerts
+  low_fps_threshold: 15
+  high_latency_threshold: 100  # milliseconds
+
+# Export and Deployment
+export:
+  output_directory: "exports"
+  
+  # TensorFlow Lite settings
+  tflite_quantization: true
+  tflite_optimization: true
+  tflite_representative_dataset_size: 100
+  
+  # ONNX settings
+  onnx_opset_version: 13
+  onnx_optimization_level: "all"
+  
+  # Core ML settings
+  coreml_minimum_deployment_target: "macOS12"
+  coreml_compute_units: "all"  # all, cpu_only, cpu_and_gpu
+
+# Development and Debug
+development:
+  save_preprocessed_images: false
+  save_prediction_logs: false
+  enable_debug_visualization: false
+  
+  # Testing
+  test_mode: false
+  synthetic_data: false
+  benchmark_mode: false

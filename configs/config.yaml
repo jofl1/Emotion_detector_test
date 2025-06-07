@@ -1,0 +1,45 @@
+# Emotion Detection Configuration
+
+# Model settings
+model:
+  architecture: "CNN"
+  input_shape: [48, 48, 1]
+  num_classes: 7
+
+# Emotion labels
+emotions:
+  - "Angry"
+  - "Disgust"
+  - "Fear"
+  - "Happy"
+  - "Neutral"
+  - "Sad"
+  - "Surprise"
+
+# Training settings
+training:
+  batch_size: 64
+  epochs: 100
+  learning_rate: 0.001
+  validation_split: 0.2
+
+# Data augmentation
+augmentation:
+  rotation_range: 15
+  width_shift_range: 0.1
+  height_shift_range: 0.1
+  shear_range: 0.1
+  zoom_range: 0.1
+  horizontal_flip: true
+
+# Inference settings
+inference:
+  confidence_threshold: 0.5
+  face_detection_scale: 1.1
+  face_detection_neighbors: 5
+
+# Camera settings
+camera:
+  width: 1280
+  height: 720
+  fps: 30
